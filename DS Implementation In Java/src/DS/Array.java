@@ -8,7 +8,7 @@ public class Array {
     private int arraySize;
 
     public Array() {
-        arraySize = 10;
+        arraySize = 10;  
         arr = new int[arraySize];
     }
 
@@ -19,7 +19,7 @@ public class Array {
 
     public boolean add(int num) {
         if (index >= arraySize) {
-            arraySize *= 2;
+            arraySize += arraySize / 2;
             arr = Arrays.copyOf(arr, arraySize);
         }
         arr[index++] = num;
@@ -27,8 +27,8 @@ public class Array {
     }
 
     public int removeAt(int index) {
-        if (index >= this.index)
-            throw new IndexOutOfBoundsException();
+        if (index < 0 && index >= this.index)
+            throw new IllegalArgumentException();
 
         int ele = arr[index];
         for (int i = index; i < this.index - 1; i++)
