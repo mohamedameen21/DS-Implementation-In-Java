@@ -8,7 +8,7 @@ public class Array {
     private int arraySize;
 
     public Array() {
-        arraySize = 10;  
+        arraySize = 10;
         arr = new int[arraySize];
     }
 
@@ -50,8 +50,6 @@ public class Array {
     }
 
     @Override
-    public String toString() {
-        return Arrays.toString(Arrays.copyOf(arr, index));
-    }
+    public String toString() {return Arrays.toString(Arrays.copyOf(arr, index));}
 
 }
